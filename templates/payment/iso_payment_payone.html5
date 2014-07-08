@@ -1,0 +1,38 @@
+
+<h2><?php echo $this->lang['headline']; ?></h2>
+<p class="message"><?php echo $this->lang['message']; ?></p>
+
+<form id="payone<?php echo $this->id; ?>" action="https://secure.pay1.de/client-api/" method="post">
+<div class="formbody">
+
+<?php if(count($this->methods) > 1): ?>
+<fieldset>
+<legend><?php echo $this->lang['method_label']; ?></legend>
+
+<?php foreach ($this->methods as $method): ?>
+<input type="radio" name="clearingtype" value="<?php echo $method; ?>" id="method_<?php echo $method; ?>" required><label for="method_<?php echo $method; ?>"><?php echo $lang['method_' . $method]['label']; ?></label>
+
+<?php endforeach; ?>
+
+</fieldset>
+<?php else: ?>
+<input type="hidden" name="clearingtype" value="<?php echo $this->methods[0]; ?>">
+<?php endif; ?>
+
+<?php foreach ($this->methods as $method): ?>
+<fieldset>
+<legend><?php echo $this->lang['method_' . $method]['legend']; ?></legend>
+
+<?php
+$template = 'template_' . $method;
+echo $this->$template;
+?>
+
+</fieldset>
+
+<?php endforeach; ?>
+
+<input type="submit" value="<?php echo $this->lang['button_label']; ?>">
+</div>
+</form>
+

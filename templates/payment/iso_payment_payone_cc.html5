@@ -1,0 +1,15 @@
+<div class="widget">
+   <?php echo $this->fields['cardholder']->generateLabel(); ?> <?php echo $this->fields['cardholder']->generateWithError(); ?>
+</div>
+<div class="widget">
+   <?php echo $this->fields['cardtype']->generateLabel(); ?> <?php echo $this->fields['cardtype']->generateWithError(); ?>
+</div>
+<div class="widget">
+   <?php echo $this->fields['cardpan']->generateLabel(); ?> <?php echo $this->fields['cardpan']->generateWithError(); ?>
+</div>
+<div class="widget">
+   <?php echo $this->fields['cardexpiredate']->generateLabel(); ?> <?php echo $this->fields['cardexpiredate']->generateWithError(); ?>
+</div>
+<div class="widget">
+   <?php echo $this->fields['cardcvc2']->generateLabel(); ?> <?php echo $this->fields['cardcvc2']->generateWithError(); ?>
+</div>
